@@ -7,8 +7,8 @@ pipeline {
             }
             post {
                 success {
-                    echo 'Now Archiving...'
-                    archiveArtifacts artifacts: '**/target/*.war'
+                    /* echo 'Now Archiving...'
+                    archiveArtifacts artifacts: '**/target/*.war' */
 					echo 'Building docker image...'
 					bat "docker build . -t tomcatwebapp:${env.BUILD_ID}"
                 }
